@@ -25,10 +25,10 @@ steps:
   displayName: 'build.ArtifactStagingDirectory'
 - script: echo $(system.defaultworkingdirectory)
   displayName: 'system.defaultworkingdirectory'
-- task: CopyFiles@2
-  inputs:
-    contents: '**/*.war'
-    TargetFolder: '$(build.ArtifactStagingDirectory)'
+#- task: CopyFiles@2
+ # inputs:
+  #  contents: '**/*.war'
+   # TargetFolder: '$(build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
