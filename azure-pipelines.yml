@@ -22,7 +22,9 @@ steps:
     goals: 'package'
 
 - script: echo $(build.ArtifactStagingDirectory)
+  displayName: 'build.ArtifactStagingDirectory'
 - script: echo $(system.defaultworkingdirectory)
+  displayName: 'system.defaultworkingdirectory'
 - task: CopyFiles@2
   inputs:
     contents: '**/*.war'
@@ -30,7 +32,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-   PathtoPublish: '$(build.ArtificatStagingDirectory)'
+   PathtoPublish: '$(build.ArtifcatStagingDirectory)'
    ArtifactName: 'newone'
 
   
