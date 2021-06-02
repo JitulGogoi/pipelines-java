@@ -21,16 +21,18 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
+- script: echo $(build.ArtifactStagingDirectory)
+- script: echo $(system.defaultworkingdirectory)
 - task: CopyFiles@2
   inputs:
-    contents: '*.war'
+    contents: '**/*.war'
     TargetFolder: '$(build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
    PathtoPublish: '$(build.ArtificatStagingDirectory)'
    ArtifactName: 'newone'
-   publishLocation: 'Container'
+
   
     
 
